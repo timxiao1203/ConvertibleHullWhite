@@ -4,7 +4,7 @@ A convertible bond pays the holder periodic coupon payments from the issuer, but
 
 Here we assume that the short term interest rate process follows a stochastic differential equation (SDE) of the Hull-White form, and that the stock’s price follows geometric Brownian motion with drift.  For tractability, however, the stock’s price SDE is modified so that its drift does not depend on the stochastic short-term interest rate.
 
-Based on the Hull-White single-factor tree building approach, respective trinomial trees are constructed for the short-term interest rate and stock’s price processes.  Using the Hull-White two-factor tree building procedure, a combined tree is constructed by matching the mean, variance and correlation corresponding to each combined tree node.  The convertible bond price is given from the combined tree by backward induction.  
+Based on the Hull-White single-factor tree building approach, respective trinomial trees are constructed for the short-term interest rate and stock’s price processes.  Using the Hull-White two-factor tree building procedure, a combined tree is constructed by matching the mean, variance and correlation corresponding to each combined tree node.  The convertible bond price is given from the combined tree by backward induction (see https://finpricing.com/lib/EqConvertible.html).  
 
 Here the issue time refers to the coupon payment immediately prior to, or including, the valuation time; otherwise it corresponds to the bond’s issuance.  Since the valuation time is taken to be zero, the issue time must be less than or equal to zero.
 
@@ -15,7 +15,5 @@ Here the set of nodes at a particular time slice on the combined tree is given b
 The holding value for any other time is the present value of the probability weighted bond prices at each of the node’s children.  The accrued interest is given by a straight-line interpolation of the coupon amount at the next coupon payment date and zero at the previous coupon payment time.
 
 References:
-
-https://finpricing.com/lib/EqCallable.html
 
 https://osf.io/eyb8c/download
